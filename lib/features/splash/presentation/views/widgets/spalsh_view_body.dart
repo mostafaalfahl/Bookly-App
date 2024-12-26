@@ -1,8 +1,38 @@
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
-class SpalshViewBody extends StatelessWidget {
+import 'sliding_text.dart';
+
+class SpalshViewBody extends StatefulWidget {
   const SpalshViewBody({super.key});
+
+  @override
+  State<SpalshViewBody> createState() => _SpalshViewBodyState();
+}
+
+class _SpalshViewBodyState extends State<SpalshViewBody>
+    with SingleTickerProviderStateMixin {
+  late AnimationController animationController;
+  late Animation<Offset> slidingAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 4), end: Offset.zero)
+            .animate(animationController);
+    animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +44,7 @@ class SpalshViewBody extends StatelessWidget {
         const SizedBox(
           height: 6,
         ),
-        const Text(
-          'Read Free Books',
-          textAlign: TextAlign.center,
-        ),
+        SlidingText(slidingAnimation: slidingAnimation),
       ],
     );
   }
