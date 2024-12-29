@@ -6,14 +6,17 @@ class BookItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 16,
+      ),
       child: AspectRatio(
         aspectRatio: 2.7 / 4,
         child: Container(
           decoration: BoxDecoration(
             color: Colors.red,
             borderRadius: BorderRadius.circular(
-              6,
+              12,
             ),
           ),
           child: Image.asset(
@@ -25,3 +28,4 @@ class BookItem extends StatelessWidget {
     );
   }
 }
+  
