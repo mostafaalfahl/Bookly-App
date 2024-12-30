@@ -50,9 +50,10 @@ class _SpalshViewBodyState extends State<SpalshViewBody>
       vsync: this,
       duration: const Duration(seconds: 1),
     );
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 4), end: Offset.zero)
-            .animate(animationController);
+    slidingAnimation = Tween<Offset>(
+      begin: const Offset(0, 4),
+      end: Offset.zero,
+    ).animate(animationController);
     animationController.forward();
   }
 
