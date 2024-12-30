@@ -28,4 +28,3 @@ class BookItem extends StatelessWidget {
     );
   }
 }
-  

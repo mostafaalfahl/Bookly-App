@@ -13,7 +13,7 @@ class CustomListView extends StatelessWidget {
           right: 16,
         ),
         scrollDirection: Axis.horizontal,
-        itemCount: 4,
+        itemCount: 10,
         itemBuilder: (context, index) {
           return const BookItem();
         },
