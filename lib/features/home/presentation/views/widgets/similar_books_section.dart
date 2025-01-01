@@ -25,11 +25,3 @@ class SimilarBooksSection extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
