@@ -19,7 +19,10 @@ class BooksDetailsSection extends StatelessWidget {
             horizontal: MediaQuery.of(context).size.width * 0.2,
             vertical: 43,
           ),
-          child: const BookImage(),
+          child: const BookImage(
+            imageUrl:
+                'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gettyimages.com%2Fphotos%2Fbook&psig=AOvVaw1pCiXP5qPK6gCLrw7hfQA3&ust=1738194774668000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPjE8KPOmYsDFQAAAAAdAAAAABAE',
+          ),
         ),
         const Text(
           'The Jungle Book',

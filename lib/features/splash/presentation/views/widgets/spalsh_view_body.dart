@@ -61,7 +61,7 @@ class _SpalshViewBodyState extends State<SpalshViewBody>
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        GoRouter.of(context).push(AppRouter.kHomeView);
+        GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
       },
     );
   }
