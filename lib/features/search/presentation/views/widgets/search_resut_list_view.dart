@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../home/presentation/views/widgets/book_list_view_item.dart';
+import '../../../../home/presentation/views/widgets/newest_books_list_view_item.dart';
 
 class SearchResutListView extends StatelessWidget {
   const SearchResutListView({super.key});
@@ -13,7 +13,8 @@ class SearchResutListView extends StatelessWidget {
       ),
       itemCount: 10,
       itemBuilder: (context, index) {
-        return const BookListViewItem();
+        // return const BookListViewItem();
+        return const Text('');
       },
     );
   }
