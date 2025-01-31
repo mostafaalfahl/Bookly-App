@@ -3,9 +3,12 @@ import 'package:bookly_app/features/home/presentation/view%20model/newest_books_
 import 'package:bookly_app/features/home/presentation/views/widgets/newest_books_list_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shimmer/shimmer.dart';
 
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
+import 'custom_shimmer_widget.dart';
+
+class NewestBooksListView extends StatelessWidget {
+  const NewestBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +37,12 @@ class BestSellerListView extends StatelessWidget {
         } else if (state is NewestBooksFailure) {
           return CustomErrorWidget(errormsg: state.errorMessage);
         } else {
-          return const Center(
-            child: CircularProgressIndicator(),
+          return Center(
+            child: Shimmer.fromColors(
+              baseColor: Colors.grey,
+              highlightColor: Colors.white,
+              child: const CustomShimmerWidget(),
+            ),
           );
         }
       },
