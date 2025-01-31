@@ -65,7 +65,7 @@ class HomeRepoImple implements HomeRepo {
     try {
       var data = await apiService.get(
           endPoint:
-              'volumes?Filtering=free-ebooks&sorting=relevance&q=subject:Computer Science');
+              'volumes?Filtering=free-ebooks&sorting=relevance&q=subject:$category');
       List<BookModel> books = [];
 
       for (var item in data['items']) {
