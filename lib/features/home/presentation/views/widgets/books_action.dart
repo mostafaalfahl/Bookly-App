@@ -1,10 +1,13 @@
 import 'package:bookly_app/core/widgets/custom_double_button.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
+import '../../../../../core/utils/functions/launch_url.dart';
 
 class BooksAction extends StatelessWidget {
-  const BooksAction({super.key});
+  const BooksAction({super.key, required this.bookModel});
 
   final double radius = 16;
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,10 @@ class BooksAction extends StatelessWidget {
         ),
         Expanded(
           child: CustomDoubleButton(
-            text: 'Free Preview',
+            onPressed: () {
+              customLaunchUrl(context, bookModel.volumeInfo.previewLink);
+            },
+            text: getText(bookModel),
             textColor: Colors.white,
             fontSize: 16,
             buttonColor: const Color(0xffEF8262),
@@ -43,5 +49,13 @@ class BooksAction extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  String getText(BookModel bookModel) {
+    if (bookModel.volumeInfo.previewLink == null) {
+      return 'Not Available';
+    } else {
+      return 'Free Preview';
+    }
   }
 }

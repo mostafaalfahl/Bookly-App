@@ -48,11 +48,13 @@ class BooksDetailsSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.symmetric(
+        Padding(
+          padding: const EdgeInsets.symmetric(
             horizontal: 8,
           ),
-          child: BooksAction(),
+          child: BooksAction(
+            bookModel: bookModel,
+          ),
         ),
       ],
     );

@@ -8,7 +8,7 @@ class CustomDoubleButton extends StatelessWidget {
     required this.textColor,
     required this.buttonColor,
     this.boredrRadius,
-    this.fontSize,
+    this.fontSize, this.onPressed,
   });
 
   final String text;
@@ -16,13 +16,14 @@ class CustomDoubleButton extends StatelessWidget {
   final Color buttonColor;
   final double? fontSize;
   final BorderRadius? boredrRadius;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 48,
       child: TextButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: TextButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: boredrRadius ?? BorderRadius.circular(12),
