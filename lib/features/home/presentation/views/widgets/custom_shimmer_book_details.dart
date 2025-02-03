@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomShimmerWidget extends StatelessWidget {
-  const CustomShimmerWidget({super.key});
+class CustomShimmerBookDetails  extends StatelessWidget {
+  const CustomShimmerBookDetails({super.key});
 
   @override
   Widget build(BuildContext context) {

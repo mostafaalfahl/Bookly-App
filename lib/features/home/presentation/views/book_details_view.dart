@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/core/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_details_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +18,7 @@ class _BookDetailsViewState extends State<BookDetailsView> {
   @override
   void initState() {
     BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(
-        category: widget.bookModel.volumeInfo.categories![0]);
+        category: widget.bookModel.volumeInfo.categories?[0] ?? '');
     super.initState();
   }
 
@@ -30,7 +30,9 @@ class _BookDetailsViewState extends State<BookDetailsView> {
           padding: const EdgeInsets.symmetric(
             horizontal: 16,
           ),
-          child: BookDetailsViewBody(bookModel: widget.bookModel,),
+          child: BookDetailsViewBody(
+            bookModel: widget.bookModel,
+          ),
         ),
       ),
     );

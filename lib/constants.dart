@@ -3,6 +3,15 @@ import 'package:flutter/material.dart';
 const kPrimaryColor = Color(0xff100B20);
 const kGTSectraFine = 'GT Sectra Fine';
 
+// Create Repo and implement it
+// create cubit 
+// provide cubit 
+// use cubit
+
+
+
+
+
 // class CustomDoubleButton extends StatelessWidget {
 //   const CustomDoubleButton({super.key});
 

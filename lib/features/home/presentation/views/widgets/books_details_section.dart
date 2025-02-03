@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/core/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
@@ -22,7 +22,9 @@ class BooksDetailsSection extends StatelessWidget {
             horizontal: MediaQuery.of(context).size.width * 0.2,
             vertical: 43,
           ),
-          child: BookImage(imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
+          child: BookImage(
+              imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ??
+                  'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/450px-No_image_available.svg.png'),
         ),
         Text(
           bookModel.volumeInfo.title!,
